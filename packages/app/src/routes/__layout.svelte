@@ -55,13 +55,6 @@
 </Layout>
 
 <style>
-	/* :root {
-  
-  } */
-	:global(body) {
-		background: var(--bg-med);
-		color: var(--contrast-med);
-	}
 	:global(body.dark) {
 		--primary: #a01c8e;
 		--primary-dark: #70004e;
@@ -90,6 +83,68 @@
 		--contrast-med: #eaecef;
 		--contrast-strong: #fafcff;
 		--contrast-overlay: #ffffff20;
-		--bg-modal: #2a2a2a;
+		--bg-modal: #242424;
+	}
+	:global(body) {
+		background: var(--bg-med);
+		color: var(--contrast-med);
+	}
+	:global(html) {
+		text-align: center;
+		font-size: 62.5%;
+	}
+	:global(body) {
+		background: var(--bg-med);
+		color: var(--contrast-med);
+		font-size: 14px;
+		font-size: 1.4rem;
+		margin: 0;
+	}
+	:global(h1) {
+		font-size: 20px;
+		font-size: 2rem;
+		margin: 0;
+	}
+	:global(h1) {
+		font-size: 20px;
+		font-size: 2rem;
+		margin: 0;
+	}
+	:global(h2) {
+		font-size: 18px;
+		font-size: 1.8rem;
+		margin: 0;
+	}
+	:global(h3) {
+		font-size: 16px;
+		font-size: 1.6rem;
+		margin: 0;
+	}
+	:global(h4) {
+		font-size: 15px;
+		font-size: 1.5rem;
+		margin: 0;
+	}
+	:global(h5) {
+		font-size: 14px;
+		font-size: 1.4rem;
+		margin: 0;
+	}
+	:global(div) {
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+	:global(p) {
+		font-size: 14px;
+		font-size: 1.4rem;
+		margin: 0;
+	}
+	:global(*) {
+		-webkit-tap-highlight-color: transparent;
+		color: var(--contrast-med);
+	}
+	:global(::placeholder) {
+		color: var(--contrast-soft);
+		opacity: 1;
 	}
 </style>

@@ -44,7 +44,7 @@
 			on:click={handleSignIn}
 			>{$loadingAuthEvent ? 'Loading' : 'Sign In'}
 		</Button>
-		<Button mt={0} mb={0} py={0} on:click={() => authPage.set('signup')}>Sign Up</Button>
+		<Button mt={0} mb={0} py={0} on:click={() => authPage.set('signup')} text="Sign Up" />
 	</div>
 </form>
 

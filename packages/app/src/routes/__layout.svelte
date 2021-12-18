@@ -55,11 +55,17 @@
 </Layout>
 
 <style>
+	:root {
+		--primary: #2ca01c;
+		--primary-dark: #108000;
+		--primary-light: #53b700;
+		--primary-transparent: #1977192a;
+	}
 	:global(body.dark) {
-		--primary: #a01c8e;
-		--primary-dark: #70004e;
-		--primary-light: #d01ebe;
-		--primary-transparent: #a01c8e5a;
+		--primary: #2ca01c;
+		--primary-dark: #108000;
+		--primary-light: #53b700;
+		--primary-transparent: #1977192a;
 		--red-error: #d6263d;
 		--shadow: #0000003a;
 		--shadow-soft: #00000040;

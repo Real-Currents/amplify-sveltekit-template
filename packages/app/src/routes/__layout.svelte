@@ -91,9 +91,9 @@
 		--contrast-overlay: #ffffff20;
 		--bg-modal: #242424;
 	}
-	:global(body) {
-		background: var(--bg-med);
-		color: var(--contrast-med);
+	:global(*) {
+		-webkit-tap-highlight-color: transparent;
+		/* color: var(--contrast-med); */
 	}
 	:global(html) {
 		text-align: center;
@@ -144,10 +144,6 @@
 		font-size: 14px;
 		font-size: 1.4rem;
 		margin: 0;
-	}
-	:global(*) {
-		-webkit-tap-highlight-color: transparent;
-		color: var(--contrast-med);
 	}
 	:global(::placeholder) {
 		color: var(--contrast-soft);

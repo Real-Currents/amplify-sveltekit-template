@@ -1,16 +1,38 @@
 <script context="module">
 	import 'sveltekit-ui/style.css';
-	import { Layout } from 'sveltekit-ui';
-	import Logo from '$lib/assets/static/Logo/index.svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import AuthTrigger from '$lib/components/Auth/AuthTrigger/index.svelte';
-	import AuthModal from '$lib/components/Auth/AuthModal/index.svelte';
 	import { Amplify } from 'aws-amplify';
 	import awsExports from 'aws-exports';
 	Amplify.configure({ ...awsExports, ssr: true });
 	import { initAuth } from '$lib/components/Auth/store';
 	initAuth();
+</script>
+
+<script>
+  import AuthModal from '$lib/components/Auth/AuthModal/index.svelte';
+	import Logo from '$lib/assets/static/Logo/index.svelte';
+	import { Layout } from 'sveltekit-ui';  
+  import { 
+    isDarkTheme, 
+    screenWidth, 
+    screenHeight, 
+    screenWidthThreshold, 
+    isSmallScreen, 
+    isAppScreen,
+    isApp,
+    isAllNavBarHidden,
+    isNavBarHidableFromScroll,
+    isNavBarHiddenFromScroll,
+    isNavBarShown,
+    isFullNavPrevented,
+    isFullNavToggledOn,
+    isFullNavShown,
+    navBarHeight,
+    shownNavBarHeight,
+    availableContentHeight
+  } from "$lib/store"
 
 	const fullNavLinks = [
 		{ name: 'Home', path: '/' },
@@ -34,9 +56,34 @@
 		{ name: 'Home', path: '/' },
 		{ name: 'Settings', path: '/settings' }
 	];
+
 </script>
 
-<Layout {fullNavLinks} {appFullNavLinks} {navBarLinks} {appNavBarLinks} page={$page} {goto}>
+<Layout 
+  {fullNavLinks}
+  {appFullNavLinks}
+  {navBarLinks}
+  {appNavBarLinks} 
+  page={$page} 
+  {goto}
+  bind:isDarkTheme={$isDarkTheme}
+  bind:screenWidth={$screenWidth} 
+  bind:screenHeight={$screenHeight}
+  bind:screenWidthThreshold={$screenWidthThreshold}
+  bind:isSmallScreen={$isSmallScreen}
+  bind:isAppScreen={$isAppScreen}
+  bind:isApp={$isApp}
+  bind:isAllNavBarHidden={$isAllNavBarHidden}
+  bind:isNavBarHidableFromScroll={$isNavBarHidableFromScroll}
+  bind:isNavBarHiddenFromScroll={$isNavBarHiddenFromScroll}
+  bind:isNavBarShown={$isNavBarShown}
+  bind:isFullNavPrevented={$isFullNavPrevented}
+  bind:isFullNavToggledOn={$isFullNavToggledOn}
+  bind:isFullNavShown={$isFullNavShown}
+  bind:navBarHeight={$navBarHeight}
+  bind:shownNavBarHeight={$shownNavBarHeight}
+  bind:availableContentHeight={$availableContentHeight}
+>
 	<div slot="navBarLogo">
 		<Logo />
 	</div>
